@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :photos
-  has_one :county 
-  has_one :parish 
-  has_one :town
+  belongs_to :county 
+  belongs_to :parish 
+  belongs_to :town
 end
