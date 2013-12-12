@@ -1,2 +1,44 @@
-%h1 Pages#index
-%p Find me in app/views/pages/index.html.haml
+.container-fluid
+  .row
+    .col-md-12.header-image
+      = image_tag('11301358335_9x.jpg', class:"img-responsive")
+  .row
+    .col-md-9.col-md-offset-1
+      .row
+        .col-md-10
+          %h1 
+            =t('dogsitter')
+        .col-md-2
+        %br
+        %button.btn 
+          = t('add-profile')
+      .row
+        .col-md-11
+          %h4
+            = t('slogan')
+          = t('intro-text')
+      .row
+        .col-md-11
+          %h3= t('search')
+      .row
+        .col-md-3
+          dropdown1
+        .col-md-3
+          dropdown2
+        .col-md-3
+          dropdown3
+
+      .row
+        .col-md-11
+      - if @users
+        - @users.each do |user|
+          .row
+            .col-md-2
+              user.profile_photo
+            .col-md-2  
+              user.name
+              user.email
+            .col-md-4  
+              user.about
+            .col-md-2   
+              = link_to 'Show', user

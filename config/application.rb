@@ -18,13 +18,13 @@ module Koerahoidja
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
-  config.generators do |g|
-     g.test_framework false
-     g.stylesheets false
-     g.javascripts false
-     g.helper false
-   end
-   
+    config.i18n.default_locale = :et
+    config.generators do |g|
+       g.test_framework false
+       g.stylesheets false
+       g.javascripts false
+       g.helper false
+     end
+     
   end
 end
