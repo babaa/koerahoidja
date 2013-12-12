@@ -1,9 +1,9 @@
 .container-fluid
   .row
-    .col-md-12.header-image
+    .header-image
       = image_tag('11301358335_9x.jpg', class:"img-responsive")
   .row
-    .col-md-9.col-md-offset-1
+    .col-md-11.col-md-offset-1
       .row
         .col-md-10
           %h1 
@@ -13,34 +13,44 @@
         %button.btn 
           = t('add-profile')
       .row
-        .col-md-11
+        .col-md-12
           %h4
             = t('slogan')
           = t('intro-text')
       .row
-        .col-md-11
-          %h3= t('search')
+        .col-md-12
+          %h3
+            = t('search')
       .row
-        .col-md-3
-          dropdown1
-        .col-md-3
-          dropdown2
-        .col-md-3
-          dropdown3
+        - county = County.first
+        - parishes = county.parishes
+        - towns = county.parishes.first.towns
+        .col-md-2
+          = select_tag :county_id, options_for_select(County.all.map {|x| [x.name, x.id]}),class: 'county-select'       
+        .col-md-2
+          = select_tag :parish_id, options_for_select(parishes.map {|x| [x.name, x.id]}), class: 'parish-select' 
+        .col-md-2
+          = select_tag :town_id, options_for_select(towns.map {|x| [x.name, x.id]}), class: 'town-select'
+        .col-md-6
       %br
       %br
       .row
-        .col-md-11
+        .col-md-12
       - if @users
         - @users.each do |user|
           .row
             .col-md-2
-              = user.profile_photo
+              = link_to(user) do
+                = user.profile_photo
             .col-md-2  
               = user.name
               = user.email
             .col-md-5  
               = user.about
-            .col-md-2   
-              = link_to 'Show', user
+            .col-md-1
+              = link_to(user) do
+                .btn.btn-default
+                  = t('profile')
           %hr
+
+= javascript_include_tag :location_selects
