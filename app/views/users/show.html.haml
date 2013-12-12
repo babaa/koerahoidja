@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Password digest:
+  = @user.password_digest
+%p
+  %b Phone:
+  = @user.phone
+%p
+  %b Profile photo:
+  = @user.profile_photo
+%p
+  %b Availability:
+  = @user.availability
+%p
+  %b About:
+  = @user.about
+%p
+  %b Suitable dogs:
+  = @user.suitable_dogs
+%p
+  %b Home description:
+  = @user.home_description
+%p
+  %b Family:
+  = @user.family
+%p
+  %b Experience:
+  = @user.experience
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
