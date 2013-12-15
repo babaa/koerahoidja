@@ -18,3 +18,5 @@
 config/database.yml
 db/addresses.csv
 .DS_Store
+.ruby-version
+.ruby-gemset
