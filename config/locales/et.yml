@@ -17,4 +17,6 @@ et:
             email:
               invalid: "E-mail pole korrektne :("
             password:
-              too_short: "Salasõna on liiga lühike :("
+              too_short: "Salasõna võiks olla vähemalt 6 tähemärki."
+            password_confirmation:
+              confirmation: "Kinnitus. wut. error."

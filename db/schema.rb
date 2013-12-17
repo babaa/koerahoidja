@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20131216105546) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password_digest"
+    t.string   "encrypted_password"
     t.string   "phone"
     t.string   "profile_photo"
     t.boolean  "availability"

@@ -22,15 +22,15 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-
+    
     if @user.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"
-      render action: 'edit'
+      redirect_to edit_user_path(@user)
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"
-      render action: 'new'
+      render action: "new"
     end
   end
 
@@ -57,6 +57,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :email, :password_digest, :phone, :profile_photo, :availability, :about, :suitable_dogs, :home_description, :family, :experience)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :profile_photo, :availability, :about, :suitable_dogs, :home_description, :family, :experience)
     end
 end
