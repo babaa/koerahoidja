@@ -22,9 +22,8 @@ class SessionsController < ApplicationController
       flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.email}"
       redirect_to(:action => 'home')
     else
-      flash[:notice] = "Invalid Email or Password"
-      flash[:color]= "invalid"
-      render "login"  
+      flash[:alert] = "Invalid Email or Password"
+      render "login"
     end
   end
 
