@@ -1,6 +1,5 @@
 Koerahoidja::Application.routes.draw do
 
-  root :to => 'sessions#login'
   match '/signup', to: 'users#new', via: [:get, :post]
   match "/login", :to => "sessions#login", via: [:get, :post]
   match "/logout", :to => "sessions#logout", via: [:get, :post]
@@ -8,11 +7,14 @@ Koerahoidja::Application.routes.draw do
   match "/profile", :to => "sessions#profile", via: [:get, :post]
   match "/setting", :to => "sessions#setting", via: [:get, :post]
 
+  get "pages/index"
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'pages#index'
+  root 'pages#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
