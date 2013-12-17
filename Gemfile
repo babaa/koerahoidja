@@ -33,6 +33,9 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 gem 'carrierwave'
 gem "mini_magick", "~> 3.7.0"
 
+# For password encrypting
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

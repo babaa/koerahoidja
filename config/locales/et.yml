@@ -5,3 +5,16 @@ et:
   add-profile: "Lisa oma profiil"
   search: "Otsing"
   look: "Vaata"
+
+  register: "Registreeri"
+  login: "Logi sisse"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "E-mail pole korrektne :("
+            password:
+              too_short: "Salasõna on liiga lühike :("

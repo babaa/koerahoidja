@@ -1,0 +1,17 @@
+%h1 Sessions#login
+
+= form_tag(:action => 'login_attempt') do
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = label :email
+    = text_field_tag :email
+  .field
+    = label :password_digest
+    = text_field_tag :password_digest
+  .actions
+    = submit_tag 'Login'
