@@ -1,14 +1,21 @@
 Koerahoidja::Application.routes.draw do
 
+  resources :sessions do
+    collection do
+      post :login_attempt
+    end
+  end
+
   match '/signup', to: 'users#new', via: [:get, :post]
-  match "/login", :to => "sessions#login", via: [:get, :post]
   match "/logout", :to => "sessions#logout", via: [:get, :post]
   match "/home", :to => "sessions#home", via: [:get, :post]
   match "/profile", :to => "sessions#profile", via: [:get, :post]
   match "/setting", :to => "sessions#setting", via: [:get, :post]
+  match "/login", :to => "sessions#login", via: [:get, :post]
 
-  get "pages/index"
   resources :users
+  resources :pages
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -24,7 +31,6 @@ Koerahoidja::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
   # Example resource route with options:
   #   resources :products do
   #     member do
