@@ -1,11 +1,28 @@
-%h1 Sessions#login
-
-= form_tag ({controller: "sessions", action: "login_attempt"}) do
-  .field
-    = label_tag :email
-    = text_field_tag :email
-  .field
-    = label_tag :login_password
-    = password_field_tag :login_password
-  .actions
-    = submit_tag 'Login'
+%table.threebox.center
+  %tr
+    %td
+  %tr
+    %td
+      .container
+        .row
+          .col-md-4.col-md-offset-4.center
+            %h1
+              = t('koerahoidja')
+            %br
+        .row
+          .col-md-4.col-md-offset-4.center
+            = form_tag ({controller: "sessions", action: "login_attempt", :html => { :class => "form-control" }}) do
+              .form-group
+                = label_tag t(:email), nil, class: "control-label"
+                %br
+                = text_field_tag :email, nil, class: "form-control center"
+              .form-group
+                = label_tag t(:login_password), nil, class: "control-label"
+                %br
+                = password_field_tag :login_password, nil, class: "form-control center"
+              .form-actions
+                = submit_tag t('login'), class: "btn btn-default"
+  %tr
+    %td
+  %tr
+    %td

@@ -14,6 +14,18 @@
 
 @import "twitter/bootstrap";
 
+body, html {
+  height: 100%;
+}
 .header-image img{
   width: 100%;
   }
+
+.center {
+  text-align:center;
+}
+
+.threebox {
+  width: 100%;
+  height: 100%;
+}

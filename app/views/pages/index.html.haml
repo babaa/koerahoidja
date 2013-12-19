@@ -5,10 +5,10 @@
   .row
     .col-md-11.col-md-offset-1
       .row
-        .col-md-10
+        .col-md-9
           %h1 
-            =t('dogsitter')
-        .col-md-2
+            =t('koerahoidja')
+        .col-md-3
           %br
           %br
           - if @current_user
@@ -22,7 +22,6 @@
             =link_to (new_user_path) do
               %button.btn 
                 = t('add-profile')
-            %br
             =link_to (login_path) do
               %button.btn 
                 = t('login')   
