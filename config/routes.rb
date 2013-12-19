@@ -8,11 +8,8 @@ Koerahoidja::Application.routes.draw do
 
   match '/signup', to: 'users#new', via: [:get, :post]
   match "/logout", :to => "sessions#logout", via: [:get, :post]
-  match "/home", :to => "sessions#home", via: [:get, :post]
-  match "/profile", :to => "sessions#profile", via: [:get, :post]
-  match "/setting", :to => "sessions#setting", via: [:get, :post]
   match "/login", :to => "sessions#login", via: [:get, :post]
-
+  
   resources :users
   resources :pages
 
