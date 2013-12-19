@@ -12,7 +12,9 @@ et:
   your-profile: "Sinu profiil"
   email: "E-mail"
   login_password: "Salasõna"
-
+  password_confirmation: "Salasõna kordus"
+  name: "Nimi"
+  next: "Edasi"
 
   activerecord:
     errors:

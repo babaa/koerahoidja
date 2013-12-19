@@ -1,21 +1,30 @@
-%h1 
-  = t('register')
-
-= form_for @user do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :password
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
-  .actions
-    = f.submit 'Save'
-%hr
-
-= link_to 'Back', users_path
+%table.threebox.center
+  %tr
+    %td
+  %tr
+    %td
+      .container
+        .row
+          .col-md-4.col-md-offset-4.center
+            %h1 
+              = t('register')
+            %br
+            = form_for @user do |f|
+              .form-group
+                = f.label t(:name), nil, class: "control-label"
+                = f.text_field :name, class: "form-control center"
+              .form-group
+                = f.label t(:email), nil, class: "control-label"
+                = f.text_field :email, class: "form-control center"
+              .form-group
+                = f.label t(:login_password), nil, class: "control-label"
+                = f.password_field :password, class: "form-control center"
+              .form-group
+                = f.label t(:password_confirmation), nil, class: "control-label"
+                = f.password_field :password_confirmation, class: "form-control center"
+              .form-actions
+                = f.submit t(:next), class: "btn btn-default"
+  %tr
+    %td
+  %tr
+    %td
