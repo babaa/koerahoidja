@@ -9,9 +9,23 @@
           %h1 
             =t('dogsitter')
         .col-md-2
-        %br
-        %button.btn 
-          = t('add-profile')
+          %br
+          %br
+          - if @current_user
+            =link_to user_path(:id => @current_user.id) do
+              %button.btn 
+                = t('your-profile')
+            =link_to "logout", :controller=> "sessions", :action=> "logout" do        
+              %button.btn 
+                = t('logout') 
+          - else
+            =link_to (new_user_path) do
+              %button.btn 
+                = t('add-profile')
+            %br
+            =link_to (login_path) do
+              %button.btn 
+                = t('login')   
       .row
         .col-md-12
           %h4

@@ -2,13 +2,15 @@ et:
   dogsitter: "Koerahoidja"
   slogan: "Couchsurfing koertele"
   intro-text: "Leia reisi ajaks oma koerale super entusiastlik koerafännist hoidja, kellel on aega ja soovi teda valvata ja nunnutada. Koerasõbrad, avage oma kodu armsatele koertele ja saate endale uusi karvaseid sõpru ja koertega tegelemise kogemust!"
-  add-profile: "Lisa oma profiil"
   search: "Otsing"
   look: "Vaata"
 
   register: "Registreeri"
   login: "Logi sisse"
-
+  logout: "Logi välja"
+  add-profile: "Lisa oma profiil"
+  your-profile: "Sinu profiil"
+  
   activerecord:
     errors:
       models:
