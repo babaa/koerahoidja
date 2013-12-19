@@ -14,11 +14,9 @@
             = form_tag ({controller: "sessions", action: "login_attempt", :html => { :class => "form-control" }}) do
               .form-group
                 = label_tag t(:email), nil, class: "control-label"
-                %br
                 = text_field_tag :email, nil, class: "form-control center"
               .form-group
                 = label_tag t(:login_password), nil, class: "control-label"
-                %br
                 = password_field_tag :login_password, nil, class: "form-control center"
               .form-actions
                 = submit_tag t('login'), class: "btn btn-default"
