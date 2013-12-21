@@ -2,68 +2,66 @@
   .row
     .header-image
       = image_tag('11301358335_9x.jpg', class:"img-responsive")
-  .row
-    .col-md-11.col-md-offset-1
-      .row
-        .col-md-9
-          %h1 
-            =t('koerahoidja')
-        .col-md-3
-          %br
-          %br
-          - if @current_user
-            =link_to user_path(:id => @current_user.id) do
-              %button.btn 
-                = t('your-profile')
-            =link_to "logout", :controller=> "sessions", :action=> "logout" do        
-              %button.btn 
-                = t('logout') 
-          - else
-            =link_to (new_user_path) do
-              %button.btn 
-                = t('add-profile')
-            =link_to (login_path) do
-              %button.btn 
-                = t('login')   
-      .row
-        .col-md-12
-          %h4
-            = t('slogan')
-          = t('intro-text')
-      .row
-        .col-md-12
-          %h3
-            = t('search')
-      .row
-        - county = County.first
-        - parishes = county.parishes
-        - towns = county.parishes.first.towns
-        .col-md-2
-          = select_tag :county_id, options_for_select(County.all.map {|x| [x.name, x.id]}),class: 'county-select'       
-        .col-md-2
-          = select_tag :parish_id, options_for_select(parishes.map {|x| [x.name, x.id]}), class: 'parish-select' 
-        .col-md-2
-          = select_tag :town_id, options_for_select(towns.map {|x| [x.name, x.id]}), class: 'town-select'
-        .col-md-6
-      %br
-      %br
-      .row
-        .col-md-12
-      - if @users
-        - @users.each do |user|
-          .row
-            .col-md-2
-              = link_to(user) do
-                = user.profile_photo
-            .col-md-2  
-              = user.name
-              = user.email
-            .col-md-5  
-              = user.about
-            .col-md-1
-              = link_to(user) do
-                .btn.btn-default
-                  = t('look')
-          %hr
+  .container
+    .row
+      .col-md-9
+        %h1 
+          =t('koerahoidja')
+      .col-md-3
+        %br
+        - if @current_user
+          =link_to user_path(:id => @current_user.id) do
+            %button.btn 
+              = t('your-profile')
+          =link_to "logout", :controller=> "sessions", :action=> "logout" do        
+            %button.btn 
+              = t('logout') 
+        - else
+          =link_to (new_user_path) do
+            %button.btn 
+              = t('add-profile')
+          =link_to (login_path) do
+            %button.btn 
+              = t('login')   
+    .row
+      .col-md-12
+        %h4
+          = t('slogan')
+        = t('intro-text')
+    .row
+      .col-md-12
+        %h3
+          = t('search')
+    .row
+      - county = County.first
+      - parishes = county.parishes
+      - towns = county.parishes.first.towns
+      .col-md-2
+        = select_tag :county_id, options_for_select(County.all.map {|x| [x.name, x.id]}),class: 'county-select'       
+      .col-md-2
+        = select_tag :parish_id, options_for_select(parishes.map {|x| [x.name, x.id]}), class: 'parish-select' 
+      .col-md-2
+        = select_tag :town_id, options_for_select(towns.map {|x| [x.name, x.id]}), class: 'town-select'
+      .col-md-6
+    %br
+    %br
+    .row
+      .col-md-12
+    - if @users
+      - @users.each do |user|
+        .row
+          .col-md-2
+            = link_to(user) do
+              = user.profile_photo
+          .col-md-2  
+            = user.name
+            = user.email
+          .col-md-5  
+            = user.about
+          .col-md-1
+            = link_to(user) do
+              .btn.btn-default
+                = t('look')
+        %hr
 
 = javascript_include_tag :location_selects

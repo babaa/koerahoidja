@@ -16,6 +16,8 @@ et:
   name: "Nimi"
   next: "Edasi"
 
+  settings: "Seaded"
+  
   activerecord:
     errors:
       models:

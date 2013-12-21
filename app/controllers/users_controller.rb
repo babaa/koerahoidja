@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  layout "user", except: 'new'
+
   # GET /users
   def index
     @users = User.all
