@@ -2,46 +2,50 @@
   %h1.center
     = @user.name
   = @user.county
-  , 
-  = @user.parish
-  ,
-  = @user.town
+  - if @user.parish
+    \/
+    = @user.parish
+  - if @user.town
+    \/
+    = @user.town
 
 .row.center
   - if @current_user
-    = link_to 'Edit', edit_user_path(@user)
-
+    = link_to t('edit'), edit_user_path(@user)
+.row.spacer
 
 .container
   .row
     .col-md-3.col-md-offset-2
       %p
-        %b Profile photo:
         = @user.profile_photo
-      %p
-        %b Email:
+      %h5
         = @user.email
-      %p
-        %b Phone:
+      %h5
         = @user.phone
       %p
         %b Availability:
         = @user.availability
     .col-md-6
+      %h4
+        = t('about')
       %p
-        %b About:
         = @user.about
+      %h4
+        = t('suitable-dogs')
       %p
-        %b Suitable dogs:
         = @user.suitable_dogs
-      %p
-        %b Home description:
+      %h4 
+        = t('home-description')
+      %p  
         = @user.home_description
+      %h4
+        = t('family')
       %p
-        %b Family:
         = @user.family
+      %h4
+        = t('experience')
       %p
-        %b Experience:
         = @user.experience
 
 

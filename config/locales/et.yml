@@ -18,7 +18,14 @@ et:
   next: "Edasi"
 
   settings: "Seaded"
+  edit: "Muuda"
   
+  about: "Minust"
+  suitable-dogs: "Sobivad hoolealused"
+  home-description: "Kodu kirjeldus"
+  family: "Perekond"
+  experience: "Kogemus koertega"
+
   activerecord:
     errors:
       models:
