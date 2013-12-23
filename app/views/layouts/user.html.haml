@@ -31,14 +31,16 @@
           %li
             =link_to t('login'), login_path
 
-
     .container
       .row
-        .col-md-12
-          = flash[:alert]
-          = flash[:notice]
+        -if flash[:alert]
+          .alert.alert-danger.alert-dismissable
+            = flash[:alert]
+        -if flash[:notice]
+          .alert.alert-success.alert-dismissable
+            = flash[:notice]
 
-      = yield
+    = yield
 
     .row.center
       %hr
