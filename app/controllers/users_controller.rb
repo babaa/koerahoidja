@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user.county ||= County.find_by(name: 'Harjumaa')
     @location_params = {
       parishes_and_towns: @user.county.parishes_and_towns_for_grouped_select
     }
