@@ -19,6 +19,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @location_params = {
+      parishes_and_towns: @user.county.parishes_and_towns_for_select
+    }
   end
 
   # POST /users

@@ -8,7 +8,6 @@ $('.county-select').on('change', function() {
 
 function populateSelect(obj, data) {
   for(var i in data) {
-
     var alreadyExists = false;
     $('option:selected', obj).each(function(_, v) {
       if($(v).val() == data[i][1]) {
@@ -16,3 +15,9 @@ function populateSelect(obj, data) {
         return false;
       }
     });
+  
+  if(!alreadyExists) {
+      obj.append('<option value="'+data[i][1]+'">'+data[i][0]+'</option>');
+    }
+  }
+}

@@ -1,5 +1,11 @@
 Koerahoidja::Application.routes.draw do
 
+  resources :locations do
+    collection do 
+      get :parishes_and_towns
+    end
+  end
+
   resources :sessions do
     collection do
       post :login_attempt
