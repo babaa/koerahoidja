@@ -31,11 +31,10 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:notice] = "You signed up successfully"
-      flash[:color]= "valid"
+      session[:user_id] = @user.id
       redirect_to edit_user_path(@user)
     else
       flash[:notice] = "Form is invalid"
-      flash[:color]= "invalid"
       render action: "new"
     end
   end
