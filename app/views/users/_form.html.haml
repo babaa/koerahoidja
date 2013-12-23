@@ -13,10 +13,7 @@
     = f.select(:county_id , options_for_select(County.all.map { |x| [x.name, x.id] }, @user.county_id), {}, class: 'county-select')
   .field
     = f.label :parish
-    = f.select(:parish, options_for_select(@location_params[:parishes_and_towns], @user.parish_id || @user.town_id), {}, class: 'parish-select')
-  .field
-    = f.label :town
-    = f.select(:town, options_for_select('1', '2'), class: 'town-select')
+    = f.select(:parish_town, grouped_options_for_select(@location_params[:parishes_and_towns], @user.parish_town || @user.town_id), {}, class: 'parish-town-select')
   .field
     = f.label :profile_photo
     = f.text_field :profile_photo

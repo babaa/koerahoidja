@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @location_params = {
-      parishes_and_towns: @user.county.parishes_and_towns_for_select
+      parishes_and_towns: @user.county.parishes_and_towns_for_grouped_select
     }
   end
 
@@ -62,6 +62,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :profile_photo, :availability, :about, :suitable_dogs, :home_description, :family, :experience, :county_id, :parish_id, :town_id)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone, :profile_photo, :availability, :about, :suitable_dogs, :home_description, :family, :experience, :county_id, :parish_town)
     end
 end

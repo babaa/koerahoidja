@@ -6,4 +6,8 @@ class Parish < ActiveRecord::Base
   def towns_for_select
     towns.map{ |x| [x.name, x.name] }
   end
+
+  def to_s
+    name
+  end
 end

@@ -42,4 +42,14 @@ class User < ActiveRecord::Base
     self.password = nil
   end
 
+  def parish_town=val
+    self.parish = Parish.find_by(name: val)
+    self.town = Town.find_by(name: val)
+  end
+
+  def parish_town
+    return parish.name if parish
+    return town.name if town
+  end
+
 end
