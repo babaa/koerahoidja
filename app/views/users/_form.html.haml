@@ -4,13 +4,13 @@
     = f.text_field :name
   .field
     = f.label :email
-    = f.text_field :email
+    = f.email_field :email
   .field
     = f.label :phone
-    = f.text_field :phone
+    = f.telephone_field :phone
   .field
     = f.label :county
-    = f.text_field :county
+    = f.select(:county_id , options_for_select(County.all.map { |x| [x.name, x.id] }, @user.county_id))
   .field
     = f.label :parish
     = f.text_field :parish
