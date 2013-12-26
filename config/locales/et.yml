@@ -31,6 +31,7 @@ et:
   profile-photo: "Profiilipilt"
   information: "Andmed"
   description: "Kirjeldus"
+  availability: "Otsingus nähtav"
 
   explanation:
     about: "Tutvusta ennast. Räägi oma huvidest või sellest, mis on sinu jaoks elu mõte."
@@ -38,6 +39,7 @@ et:
     home-description: "Räägi oma kodust. Kas elad majas või korteris? Mis on sinu kodu ümbruses, ehk elad ranna lähedal või on sul maja taga mets?"
     family: "Kellega peab külaline hästi läbi saama? Kas elad üksi? Tutvusta oma pere loomi ja inimesi, kellega hoolealune kokku puutub."
     experience: "Kui palju on sul koertega tegelemise kogemust? Tahad kätt harjutada, enne kui endale päris koera võtad või on sul aastaid peres koerad olnud?"
+    availability: "Kui kastis on linnuke, oled otsijatele leitav."
 
   signup-successful: "Uus kasutaja loodud!"
   user-update-successful: "Profiili muudatused salvestatud."
