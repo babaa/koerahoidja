@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def login_attempt
     authorized_user = User.authenticate(params[:email],params[:login_password])
     if authorized_user
-      flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.email}"
+      flash[:notice] = "Tere jälle! Logisid sisse e-mailiga #{authorized_user.email}"
       session[:user_id] = authorized_user.id
       redirect_to user_path(authorized_user)
     else

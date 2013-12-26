@@ -26,6 +26,11 @@ et:
   family: "Perekond"
   experience: "Kogemus koertega"
 
+  signup-successful: "Uus kasutaja loodud!"
+  user-update-successful: "Profiili muudatused salvestatud."
+  user-destroyed: "Kasutaja kustutati."
+  form-invalid: "Vorm on vigane."
+
   activerecord:
     errors:
       models:

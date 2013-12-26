@@ -30,11 +30,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      flash[:notice] = "You signed up successfully"
+      flash[:notice] = t('signup-successful')
       session[:user_id] = @user.id
       redirect_to edit_user_path(@user)
     else
-      flash[:notice] = "Form is invalid"
+      flash[:notice] = t('form-invalid')
       render action: "new"
     end
   end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to @user, notice: t('user-update-successful')
     else
       render action: 'edit'
     end
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+    redirect_to users_url, notice: t('user-destroyed')
   end
 
   private
