@@ -25,6 +25,10 @@ et:
   home-description: "Kodu kirjeldus"
   family: "Perekond"
   experience: "Kogemus koertega"
+  phone: "Telefon"
+  county: "Maakond"
+  parish-town: "Linn/vald"
+  profile-photo: "Profiilipilt"
 
   signup-successful: "Uus kasutaja loodud!"
   user-update-successful: "Profiili muudatused salvestatud."
