@@ -2,6 +2,10 @@
 .row.center
   .col-md-5.col-md-offset-3
     = form_for @user, html: {class: "form-horizontal"} do |f|
+      .row
+        .col-md-4.col-md-offset-5
+          %h3= t('information')
+      .row.spacer
       .form-group
         = f.label t(:name), nil, class: "control-label col-md-3"
         .col-md-9
@@ -30,28 +34,43 @@
         = f.label :availability, nil, class: "col-md-3 control-label"
         .col-md-9
           = f.check_box :availability
+      .row.spacer
+      .row
+        .col-md-4.col-md-offset-5
+          %h3= t('description')
+      .row.spacer
       .form-group
         = f.label t('about'), nil, class: "col-md-3 control-label"
         .col-md-9
-          = f.text_area :about, class: "form-control"
+          = f.text_area :about, class: "form-control", rows: "5"
+          .small
+            = t('explanation.about')
       .form-group
         = f.label t('suitable-dogs'), nil, class: "col-md-3 control-label"
         .col-md-9
-          = f.text_area :suitable_dogs, class: "form-control"
+          = f.text_area :suitable_dogs, class: "form-control", rows: "5"
+          .small
+            = t('explanation.suitable-dogs')
       .form-group
         = f.label t('home-description'), nil, class: "col-md-3 control-label"
         .col-md-9
-          = f.text_area :home_description, class: "form-control"
+          = f.text_area :home_description, class: "form-control", rows: "5"
+          .small
+            = t('explanation.home-description')
       .form-group
         = f.label t('family'), nil, class: "col-md-3 control-label"
         .col-md-9
-          = f.text_area :family, class: "form-control"
+          = f.text_area :family, class: "form-control", rows: "5"
+          .small
+            = t('explanation.family')
       .form-group
         = f.label t('experience'), nil, class: "col-md-3 control-label"
         .col-md-9
-          = f.text_area :experience, class: "form-control"
+          = f.text_area :experience, class: "form-control", rows: "5"
+          .small
+            = t('explanation.experience')
       .row.spacer
-      .actions
-        = f.submit 'Save', class: "btn btn-default"
+      .actions.text-right 
+        = f.submit t('edit'), class: "btn btn-default btn-lg"
 
 = javascript_include_tag 'location_selects'

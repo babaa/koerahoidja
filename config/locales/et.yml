@@ -29,6 +29,15 @@ et:
   county: "Maakond"
   parish-town: "Linn/vald"
   profile-photo: "Profiilipilt"
+  information: "Andmed"
+  description: "Kirjeldus"
+
+  explanation:
+    about: "Tutvusta ennast. Räägi oma huvidest või sellest, mis on sinu jaoks elu mõte."
+    suitable-dogs: "Kirjelda, milliseid hoolealuseid saad vastu võtta. Võibolla tahad hoida ainult täiskasvanud koeri, võibolla julged võtta vaid väikeseid koeri."
+    home-description: "Räägi oma kodust. Kas elad majas või korteris? Mis on sinu kodu ümber, kas elad ranna lähedal või on sul maja taga mets?"
+    family: "Kellega peab külaline hästi läbi saama? Kas elad üksi? Maini kindlasti, kas sul on teisi koeri või loomi ning tutvusta oma perekonda, kellega hoolealune kokku puutub."
+    experience: "Kui palju on sul koertega tegelemise kogemust? Oled ehk koeratreener või on sul alati peres koerad olnud?"
 
   signup-successful: "Uus kasutaja loodud!"
   user-update-successful: "Profiili muudatused salvestatud."
