@@ -5,8 +5,8 @@ class County < ActiveRecord::Base
   
   def parishes_and_towns_for_grouped_select
     return {
-      'Vallad' => parishes.map{ |x| [x.name, x.name] },
-      'Linnad' => towns.map{ |x| [x.name, x.name] }
+      'Vallad' => parishes.order("name").map{ |x| [x.name, x.name] },
+      'Linnad' => towns.order("name").map{ |x| [x.name, x.name] }
     }
   end
 
