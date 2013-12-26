@@ -1,41 +1,57 @@
-= form_for @user do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.email_field :email
-  .field
-    = f.label :phone
-    = f.telephone_field :phone
-  .field
-    = f.label :county
-    = f.select(:county_id , options_for_select(County.all.map { |x| [x.name, x.id] }, @user.county_id), {}, class: 'county-select')
-  .field
-    = f.label :parish
-    = f.select(:parish_town, grouped_options_for_select(@location_params[:parishes_and_towns], @user.parish_town || @user.town_id), {}, class: 'parish-town-select')
-  .field
-    = f.label :profile_photo
-    = f.text_field :profile_photo
-  .field
-    = f.label :availability
-    = f.check_box :availability
-  .field
-    = f.label :about
-    = f.text_area :about
-  .field
-    = f.label :suitable_dogs
-    = f.text_area :suitable_dogs
-  .field
-    = f.label :home_description
-    = f.text_area :home_description
-  .field
-    = f.label :family
-    = f.text_area :family
-  .field
-    = f.label :experience
-    = f.text_area :experience
-  .actions
-    = f.submit 'Save'
+.row.spacer
+.row.center
+  .col-md-5.col-md-offset-3
+    = form_for @user, html: {class: "form-horizontal"} do |f|
+      .form-group
+        = f.label :name, nil, class: "control-label col-md-3"
+        .col-md-9
+          = f.text_field :name, class: "form-control"
+      .form-group
+        = f.label :email, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.email_field :email, class: "form-control"
+      .form-group
+        = f.label :phone, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.telephone_field :phone, class: "form-control"
+      .form-group
+        = f.label :county, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.select(:county_id , options_for_select(County.all.map { |x| [x.name, x.id] }, @user.county_id), {}, class: 'county-select')
+      .form-group
+        = f.label :parish, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.select(:parish_town, grouped_options_for_select(@location_params[:parishes_and_towns], @user.parish_town || @user.town_id), {}, class: 'parish-town-select')
+      .form-group
+        = f.label :profile_photo, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.text_field :profile_photo, class: "form-control"
+      .form-group
+        = f.label :availability, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.check_box :availability
+      .form-group
+        = f.label :about, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.text_area :about, class: "form-control"
+      .form-group
+        = f.label :suitable_dogs, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.text_area :suitable_dogs, class: "form-control"
+      .form-group
+        = f.label :home_description, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.text_area :home_description, class: "form-control"
+      .form-group
+        = f.label :family, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.text_area :family, class: "form-control"
+      .form-group
+        = f.label :experience, nil, class: "col-md-3 control-label"
+        .col-md-9
+          = f.text_area :experience, class: "form-control"
+      .row.spacer
+      .actions
+        = f.submit 'Save', class: "btn btn-default"
 
 = javascript_include_tag 'location_selects'
