@@ -41,16 +41,9 @@
           = t('search')
     .row
       - county = County.first
-      - parishes = county.parishes
-      - towns = county.parishes.first.towns
       .col-md-2
-        = select_tag :county_id, options_for_select(County.all.map {|x| [x.name, x.id]}),class: 'county-select'       
-      .col-md-2
-        = select_tag :parish_id, options_for_select(parishes.map {|x| [x.name, x.id]}), class: 'parish-select' 
-      .col-md-2
-        = select_tag :town_id, options_for_select(towns.map {|x| [x.name, x.id]}), class: 'town-select'
+        = select_tag :county_id, options_for_select(County.all.map {|x| [x.name, x.id]}),class: 'county-select form-control'       
       .col-md-6
-    %br
     %br
     .row
       .col-md-12
