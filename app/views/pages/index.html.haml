@@ -1,33 +1,41 @@
+<!-- -------- HEADER IMAGE -------- -->
 .container-fluid
   .row
     .header-image
       = image_tag('11301358335_9x.jpg', class:"img-responsive")
-  .container
+  
+  <!-- -------- MAIN CONTAINER -------- -->
+  .container.mediumwidth
     .row
       .col-md-9
         %h1 
           =t('koerahoidja')
+
+      <!-- -------- LOGIN LOGOUT BUTTONS -------- -->
       .col-md-3
-        %br
-        - if @current_user
-          =link_to user_path(:id => @current_user.id) do
-            %button.btn 
-              = t('your-profile')
-          =link_to "logout", :controller=> "sessions", :action=> "logout" do        
-            %button.btn 
-              = t('logout') 
-        - else
-          =link_to (new_user_path) do
-            %button.btn 
-              = t('add-profile')
-          =link_to (login_path) do
-            %button.btn 
-              = t('login')   
+        .btn-group
+          %br
+          - if @current_user
+            =link_to user_path(:id => @current_user.id) do
+              %button.btn
+                = t('your-profile')
+            =link_to "logout", :controller=> "sessions", :action=> "logout" do        
+              %button.btn 
+                = t('logout') 
+          - else
+            =link_to (new_user_path) do
+              %button.btn 
+                = t('add-profile')
+            =link_to (login_path) do
+              %button.btn 
+                = t('login')   
     .row
       .col-md-12
         %h4
           = t('slogan')
         = t('intro-text')
+
+    <!-- -------- SEARCH -------- -->
     .row
       .col-md-12
         %h3
@@ -47,21 +55,34 @@
     %br
     .row
       .col-md-12
+
+    <!-- -------- USERS LIST -------- -->
     - if @users
-      - @users.each do |user|
-        .row
-          .col-md-2
-            = link_to(user) do
-              = user.profile_photo
-          .col-md-2  
-            = user.name
-            = user.email
-          .col-md-5  
-            = user.about
-          .col-md-1
-            = link_to(user) do
-              .btn.btn-default
-                = t('look')
-        %hr
+      .panel.panel-default
+        .panel-heading
+          .col-md-2.col-md-offset-2
+            =t('name')
+            \/
+            =t('location')
+          .col-md-4
+            =t('about')
+          .col-md.4
+            =t('suitable-dogs')
+        .list-group
+        - @users.each do |user|
+          = link_to user, {class: 'list-group-item'} do  
+            .list-group-item-text
+              .row
+                .col-md-2
+                  = user.profile_photo
+                .col-md-2
+                  %h4.list-group-item-heading
+                    = user.name
+                  = user.parish_town
+                .col-md-4
+                  = user.about
+                .col-md-4
+                  = user.suitable_dogs
+    .row.spacer
 
 = javascript_include_tag :location_selects

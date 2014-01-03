@@ -32,10 +32,11 @@ et:
   information: "Andmed"
   description: "Kirjeldus"
   availability: "Otsingus nähtav"
+  location:  "Asukoht"
 
   explanation:
     about: "Tutvusta ennast. Räägi oma huvidest või sellest, mis on sinu jaoks elu mõte."
-    suitable-dogs: "Milliseid hoolealuseid eelistad? Võibolla tahad hoida ainult täiskasvanud koeri, võibolla tahad külla ainult Corgisid?"
+    suitable-dogs: "Milliseid hoolealuseid eelistad? Võibolla tahad hoida ainult täiskasvanud koeri, võibolla tahad külla ainult corgisid?"
     home-description: "Räägi oma kodust. Kas elad majas või korteris? Mis on sinu kodu ümbruses, ehk elad ranna lähedal või on sul maja taga mets?"
     family: "Kellega peab külaline hästi läbi saama? Kas elad üksi? Tutvusta oma pere loomi ja inimesi, kellega hoolealune kokku puutub."
     experience: "Kui palju on sul koertega tegelemise kogemust? Tahad kätt harjutada, enne kui endale päris koera võtad või on sul aastaid peres koerad olnud?"
