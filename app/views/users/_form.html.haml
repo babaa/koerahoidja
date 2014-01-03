@@ -70,8 +70,8 @@
           = f.text_area :experience, class: "form-control", rows: "5"
           .small.text-muted.text-left
             = t('explanation.experience')
+      .actions.text-right
+        = f.submit t('edit'), class: "btn btn-info"
       .row.spacer
-      .actions.text-right 
-        = f.submit t('edit'), class: "btn btn-default btn-lg"
 
 = javascript_include_tag 'location_selects'
