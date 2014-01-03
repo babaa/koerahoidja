@@ -3,7 +3,7 @@
   .row
     .header-image
       = image_tag('11301358335_9x.jpg', class:"img-responsive")
-  
+  = render 'layouts/flash'
   <!-- -------- MAIN CONTAINER -------- -->
   .container.mediumwidth
     .row
@@ -76,5 +76,5 @@
                 .col-md-4
                   = user.suitable_dogs
     .row.spacer
-
+    = render 'layouts/footer'
 = javascript_include_tag :location_selects

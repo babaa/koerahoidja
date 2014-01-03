@@ -32,22 +32,7 @@
             =link_to t('login'), login_path
 
     .container
-      .row
-        -if flash[:alert]
-          .alert.alert-danger.alert-dismissable
-            = flash[:alert]
-            %button.close
-              &times;
-            
-        -if flash[:notice]
-          .alert.alert-success.alert-dismissable
-            = flash[:notice]
-            %button.close
-              &times;
+      = render 'layouts/flash'
 
     = yield
-
-    .row.center
-      %hr
-      SO COPYRIGHT WOW
-      %hr
+    = render 'layouts/footer'

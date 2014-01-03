@@ -1,0 +1,8 @@
+.row.center
+  -if flash[:alert]
+    .alert.alert-danger.alert-dismissable
+      = flash[:alert]
+      
+  -if flash[:notice]
+    .alert.alert-success.alert-dismissable
+      = flash[:notice]
