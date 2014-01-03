@@ -7,28 +7,27 @@
   <!-- -------- MAIN CONTAINER -------- -->
   .container.mediumwidth
     .row
-      .col-md-9
+      .col-md-8
         %h1 
           =t('koerahoidja')
 
       <!-- -------- LOGIN LOGOUT BUTTONS -------- -->
-      .col-md-3
-        .btn-group
-          %br
-          - if @current_user
-            =link_to user_path(:id => @current_user.id) do
-              %button.btn
-                = t('your-profile')
-            =link_to "logout", :controller=> "sessions", :action=> "logout" do        
-              %button.btn 
-                = t('logout') 
-          - else
-            =link_to (new_user_path) do
-              %button.btn 
-                = t('add-profile')
-            =link_to (login_path) do
-              %button.btn 
-                = t('login')   
+      .col-md-4
+        %br
+        - if @current_user
+          =link_to user_path(:id => @current_user.id) do
+            %button.btn.btn-info
+              = t('your-profile')
+          =link_to "logout", :controller=> "sessions", :action=> "logout" do        
+            %button.btn.btn-info
+              = t('logout') 
+        - else
+          =link_to (new_user_path) do
+            %button.btn.btn-info
+              = t('add-profile')
+          =link_to (login_path) do
+            %button.btn.btn-info
+              = t('login')   
     .row
       .col-md-12
         %h4
