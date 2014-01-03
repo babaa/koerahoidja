@@ -8,7 +8,7 @@
   %body
     %nav.navbar.navbar-default{:role => "navigation"}
       .navbar-header
-        =link_to t(:koerahoidja), nil, {class: 'navbar-brand uppercase letter-spacing '}
+        =link_to t(:koerahoidja), root_path , {class: 'navbar-brand uppercase letter-spacing '}
       %ul.nav.navbar-nav.navbar-collapse.navbar-right
         %li.navbar-text
           - if @current_user
@@ -36,9 +36,14 @@
         -if flash[:alert]
           .alert.alert-danger.alert-dismissable
             = flash[:alert]
+            %button.close
+              &times;
+            
         -if flash[:notice]
           .alert.alert-success.alert-dismissable
             = flash[:notice]
+            %button.close
+              &times;
 
     = yield
 
