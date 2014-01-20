@@ -41,6 +41,7 @@ et:
     family: "Kellega peab külaline hästi läbi saama? Kas elad üksi? Tutvusta oma pere loomi ja inimesi, kellega hoolealune kokku puutub."
     experience: "Kui palju on sul koertega tegelemise kogemust? Tahad kätt harjutada, enne kui endale päris koera võtad või on sul aastaid peres koerad olnud?"
     availability: "Kui kastis on linnuke, oled otsijatele leitav."
+    register: "Kui soovid hakata hoidjaks, loo Koerahoidja veebilehele enda tutvustamiseks profiil."
 
   signup-successful: "Uus kasutaja loodud!"
   user-update-successful: "Profiili muudatused salvestatud."
